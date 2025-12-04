@@ -15,4 +15,16 @@ public class RandomAlg {
         x = (a * x + c) % m;
         return x;
     }
+    public static void main(String[] args) {
+        long a = 25214903917L;
+        long c = 11;
+        long m = 1L << 48;
+        long seed = 12345;
+
+        RandomAlg r = new RandomAlg(a, c, m, seed);
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(r.next());
+        }
+    }
 }

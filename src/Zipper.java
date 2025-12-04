@@ -29,5 +29,13 @@ public class Zipper {
 
         return StreamSupport.stream(iterable.spliterator(), false);
     }
+    public static void main(String[] args) {
 
+        Stream<String> s1 = Stream.of("A", "B", "C");
+        Stream<String> s2 = Stream.of("1", "2", "3", "4");
+
+        Stream<String> zipped = Zipper.zip(s1, s2);
+
+        zipped.forEach(System.out::println);
+    }
 }
